@@ -1,29 +1,17 @@
 # vue-basic-tutorial
 
-## Project setup
-```
-yarn install
-```
+### 注册全局过滤器
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
+src/filters/index.js
 
-### Compiles and minifies for production
-```
-yarn run build
-```
 
-### Run your tests
-```
-yarn run test
-```
+src/main.js
 
-### Lints and fixes files
-```
-yarn run lint
-```
+```js
+import * as filters from '@/filters'
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+// 注册全局过滤器
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key])
+})
+```
